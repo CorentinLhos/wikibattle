@@ -1,0 +1,21 @@
+#body {
+    font-family:arial, sans-serif;
+    font-size:100%;
+    }
+
+#bandeau {
+    padding:1px 0;
+    background-color: blue
+}
+
+#centre {
+
+    padding:250px 50px;
+    background-color: yellow
+}
+
+#bas {
+
+    padding:25px 0;
+    background-color: royalblue
+}
