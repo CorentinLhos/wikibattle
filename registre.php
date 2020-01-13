@@ -1,12 +1,12 @@
 <?php
 session_start();
+include("database.php");
 
+global $db;
 
 $utilisateur ="";
 $mail ="";
 $mdp ="";
-
-$data = mysqli_connect('192.168.64.186', 'root', 'root', 'tpsite');
 
 if(!empty($_POST)){
             
@@ -32,7 +32,7 @@ if(!empty($_POST)){
         
         if($valid){
             
-            $q = $data->prepare("INSERT INTO `user`(`Utilisateur`, `Email`, `Mot de passe`) VALUES (:utilisateur,:mail,:password)");
+            $q = $db->prepare("INSERT INTO `user`(`Utilisateur`, `Email`, `Mot de passe`) VALUES (:utilisateur,:mail,:password)");
             $q->execute([
                 'utilisateur' => $utilisateur,
                 'mail' => $mail,
@@ -41,3 +41,5 @@ if(!empty($_POST)){
 
 
             }}}
+
+            ?>

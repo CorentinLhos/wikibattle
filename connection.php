@@ -7,6 +7,7 @@
               <li class="menu__group"><a href="battle.php" class="menu__link">Battle</a></li>
               <li class="menu__group"><a href="wiki.html" class="menu__link">Wikipedia</a></li>
               <li class="menu__group"><a href="connection.php" class="menu__link">Se Connecter</a></li>
+              <li class="menu__group"><a href="arene.php" class="menu__link">Arene</a></li>
             </ul>
             </nav>
     </head>
@@ -19,7 +20,7 @@
             Utilisateur : <input type="text" name="name"><br>
             Adresse mail : <input type="text" name="email"><br>
             Mot de passe : <input type="text" name="password">><br>
-            <input type="submit" value="C'est parti!"><br>
+            <input type="submit"name='inscription' value="C'est parti!"><br>
         </form>
         
         <a href="connection.php"><br>Se connecter</br></a>
