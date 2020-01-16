@@ -1,45 +1,22 @@
-<?php
-session_start();
-include("database.php");
+      <?php
 
-global $db;
+   try {
 
-$utilisateur ="";
-$mail ="";
-$mdp ="";
+         $bdd = new PDO('mysql:host=192.168.64.186;dbname=tpsite', 'Winston', '2012');
+         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if(!empty($_POST)){
-            
-    $valid = true;
-    if (isset($_POST['inscription'])){
-        //on recupère le nom prenom pseudo mdp mdpconf du formulaire pour traiter
-        $utilisateur = $_POST['name'];
-        $mail = $_POST['email'];
-        $mdp = $_POST['password'];
-
-        if(empty($utilisateur)){
-            $valid = false;
-             echo "Le nom d' utilisateur ne peut pas être vide";
-        }
-        if(empty($mail)){
-            $valid = false;
-            echo "Le prenom d' utilisateur ne peut pas être vide";
-        }      
-        if(empty($mdp)){
-            $valid = false;
-            echo "Le pseudo d' utilisateur ne peut pas être vide";
-        }
-        
-        if($valid){
-            
-            $q = $db->prepare("INSERT INTO `user`(`Utilisateur`, `Email`, `Mot de passe`) VALUES (:utilisateur,:mail,:password)");
-            $q->execute([
-                'utilisateur' => $utilisateur,
-                'mail' => $mail,
-                'password' => $mdp,
-        ]);
+         }
+            catch(Exception $e)                                      
+         {
+            die('Erreur :' .$e->getMessage()); 
+         }
 
 
-            }}}
 
-            ?>
+
+               
+                     $insertmbr = $bdd->prepare("INSERT INTO user(Utilisateur, Email, mdp) VALUES(?, ?, ?)");
+                     $insertmbr->execute(array($_POST['Utilisateur'], $_POST['Email'], $mdp = $_POST['Pass']));
+                     $erreur = "Votre compte a bien été créé ! <a href=\"connection.php\">Me connecter</a>";
+                 
+      ?>

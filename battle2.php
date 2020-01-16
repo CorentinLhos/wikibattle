@@ -6,7 +6,6 @@ class Heros{
     private $_prenom;
     private $_personnage;
     private $_points;
-    private $_arme;
    
 
 

@@ -11,19 +11,45 @@
             </ul>
             </nav>
     </head>
-    <body>
-    <link rel="stylesheet" href="connection.css">
-    <div id="pagea">
-    <div id="info">
-    <h1><br>Inscription</br></h1>
-        <form method="post" action="registre.php">
-            Utilisateur : <input type="text" name="name"><br>
-            Adresse mail : <input type="text" name="email"><br>
-            Mot de passe : <input type="text" name="password">><br>
-            <input type="submit"name='inscription' value="C'est parti!"><br>
-        </form>
-        
-        <a href="connection.php"><br>Se connecter</br></a>
+      <body>
+             <link rel="stylesheet" href="connection.css">
+         <div id="pagea">
+      <div id="info">
+    <form method="POST" action="registre.php">
+            <table>
+               <tr>
+                  <td align="right">
+                     <label for="Utilisateur">Pseudo :</label>
+                  </td>
+                  <td>
+                     <input type="text" placeholder="Votre pseudo" id="Utilisateur" name="Utilisateur" value="">
+                  </td>
+               </tr>
+               <tr>
+                  <td align="right">
+                     <label for="Email">Mail :</label>
+                  </td>
+                  <td>
+                     <input type="email" placeholder="Votre mail" id="Email" name="Email" value="">
+                  </td>
+               </tr>
+               <tr>
+                  <td align="right">
+                     <label for="mdp">Mot de passe :</label>
+                  </td>
+                  <td>
+                     <input type="password" placeholder="Votre mot de passe" id="Pass" name="Pass" />
+                  </td>
+               </tr>
+               <tr>
+                  <td></td>
+                  <td align="center">
+                     <br />
+                     <input type="submit" name="forminscription" value="Je m'inscris" />
+                  </td>
+               </tr>
+            </table>
+         </form>
         </div>
     </body>
 </html>

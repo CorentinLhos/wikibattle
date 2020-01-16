@@ -46,7 +46,30 @@
     $personnage7=new Heros(6);
     $personnage7->AfficherPerso();
 
-?>
+    $personnage8=new Heros(7);
+    $personnage8->AfficherPerso();
 
-</body>
-</html>
+    $personnage9=new Heros(8);
+    $personnage9->AfficherPerso();
+
+
+?>
+<form method="post" action="battle2.php">
+        <p>Nom</p>
+        <input type="text" name="Nom">
+        <input type="submit" name="submit" value="Valider">
+
+
+    <?php
+    // on se connecte à notre base et on prépare l'uptade
+        $base = new PDO('mysql:host=192.168.64.186;dbname=tpsite;charset=utf8', 'root', 'root');
+        $req = $base->prepare("SELECT Points FROM personnage WHERE IDPersonnage = ?");
+        $req->execute(array($id));
+        ?>
+
+    <?php
+    // lancement de la requête
+    
+        ?>
+    </body>
+    </html>
