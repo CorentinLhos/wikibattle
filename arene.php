@@ -15,60 +15,61 @@
                     <li class="menu__group"><a href="arene.php" class="menu__link">Arene</a></li>
                 </ul>
             </nav>
-        </div>
-        
-        
+        </div>   
     </head>
+
     <body>
-    <?php
+            <?php /* doit afficher chaque arene */
 
-    $personnage=new Arene(1);
-    $personnage->AfficherArene();
+                $arene1=new Arene(1);
+                $arene1->AfficherArene();
+                
+                $arene2=new Arene(2);
+                $arene2->AfficherArene();
+
+                $arene3=new Arene(3);
+                $arene3->AfficherArene();
+
+                $arene4=new Arene(4);
+                $arene4->AfficherArene();
+
+                $arene5=new Arene(5);
+                $arene5->AfficherArene();
+
+                $arene6=new Arene(6);
+                $arene6->AfficherArene();
+
+                $arene7=new Arene(7);
+                $arene7->AfficherArene();
+
+                $arene8=new Arene(8);
+                $arene8->AfficherArene();
+            
+            ?>
     
-    $personnage1=new Arene(2);
-    $personnage1->AfficherArene();
+        <img src="image/NewYork.jpg" width="500" height="300" /><!-- image-->
+        <p>New York à un malus car il y à beaucoup de population à New York.</p>
 
-    $personnage2=new Arene(3);
-    $personnage2->AfficherArene();
+        <img src="image/asegard.jpg" width="500" height="300" /><!-- image-->
+        <p>Asgard à un bonus car le lieu se situ dans l'espace.</p>
 
-    $personnage3=new Arene(4);
-    $personnage3->AfficherArene();
+        <img src="image/Lune.jpg" width="500" height="300" /><!-- image-->
+        <p>La Lune à un bonus car il n'y a personne et que l'ont marche en apesanteur.</p>
 
-    $personnage4=new Arene(5);
-    $personnage4->AfficherArene();
+        <img src="image/Heliporteur.jpg" width="500" height="300" /><!-- image-->
+        <p>L'Héliport à un malus car il se situ des les aire.</p>
 
-    $personnage5=new Arene(6);
-    $personnage5->AfficherArene();
+        <img src="image/aeroport.jpg" width="500" height="300" /><!-- image-->
+        <p>L'Aéroport à un bonus car il y a relativement peu de population.</p>
 
-    $personnage6=new Arene(7);
-    $personnage6->AfficherArene();
+        <img src="image/wakanda.jpg" width="500" height="300" /><!-- image-->
+        <p>Le Wakanda à un bonus car le lieu est entouré de jungle.</p>
 
-    $personnage7=new Arene(8);
-    $personnage7->AfficherArene();
+        <img src="image/QG.jpg" width="500" height="300" /><!-- image-->
+        <p>Le QG des Avengeur à un malus car ont ne s'attend pas à combattre ici.</p>
 
-?>
-<img src="image/NewYork.jpg" width="500" height="300" /><!-- image-->
-<p>New York à un malus car il y à beaucoup de population à New York.</p>
+        <img src="image/Titan.jpg" width="500" height="300" /><!-- image-->
+        <p>Titan a un malus car c'est une planet en ruine mais il y petit bonus car il n'y a pas de population sur c'est planet.</p>
 
-<img src="image/asegard.jpg" width="500" height="300" /><!-- image-->
-<p>Asgard à un bonus car le lieu se situ dans l'espace.</p>
-
-<img src="image/Lune.jpg" width="500" height="300" /><!-- image-->
-<p>La Lune à un bonus car il n'y a personne et que l'ont marche en apesenteur.</p>
-
-<img src="image/Heliporteur.jpg" width="500" height="300" /><!-- image-->
-<p>L'Héliport à un malus car il se situ des les aire.</p>
-
-<img src="image/aeroport.jpg" width="500" height="300" /><!-- image-->
-<p>L'Aéroport à un bonus car il et relativement dégare de population.</p>
-
-<img src="image/wakanda.jpg" width="500" height="300" /><!-- image-->
-<p>Le Wakanda à un bonus car le lieu est entouré de jungle.</p>
-
-<img src="image/QG.jpg" width="500" height="300" /><!-- image-->
-<p>Le QG des vengeur à un malus car ont ne s'attend pas à combattre ici.</p>
-
-<img src="image/Titan.jpg" width="500" height="300" /><!-- image-->
-<p>Titan a un malus car c'est une planet en ruine mais il y petit bonus car il n'y a pas de population sur c'est planet.</p>
-</body>
+    </body>
 </html>

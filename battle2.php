@@ -6,53 +6,37 @@ class Heros{
     private $_prenom;
     private $_personnage;
     private $_points;
+    private $_perso;
    
 
 
-    public function __construct($idpersonnage)
+    public function __construct()
     {                                                
                     
         try{
             //execution du code sur la BDD 
-            $BDD = new PDO('mysql:host=192.168.64.186;dbname=tpsite;charset=utf8', 'root', 'root');
-            $resultat = $BDD->query('SELECT * FROM personnage WHERE IDPersonnage = '.$idpersonnage);
-            $resultat = $resultat->fetch();
-
-            $this->_personnage = $resultat['IDPersonnage'];
-            $this->_nom =$resultat['Nom'];
-            $this->_prenom =$resultat['Prenom'];
-            $this->_points =$resultat['Points'];
-                                                                   
-            }
-            catch (Exception $erreur)
-            {
-                echo 'Erreur : '.$erreur->getmessage();
-            }
-                                                               
-            $this->_id = $idpersonnage;
+            $this->_bdd = $BDD = new PDO('mysql:host=192.168.64.186;dbname=tpsite;charset=utf8', 'root', 'root');
+            $BDD->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (Exception $e) {
+            // En cas d'erreur, on affiche un message et on arrête tout
+            die('Erreur : ' . $e->getMessage());
+        }
     }
 
-    public function getpersonnage()
-    {
-        return $this->_personage;
-    }   
-    public function getnom()
-    {
-        return $this->_nom;
-    }
-    public function getprenom()
-    {
-        return $this->_prenom;
-    }
-    public function getpoints()
-    {
-        return $this->_points;
-    }
+            
     public function AfficherPerso()
     {
-        echo  '<p> Le Personnage n° '.$this->_personnage.' est '.$this->_nom. ' ' .$this->_prenom.  ' avec un nombre de points de '.$this->_points.'. </p>';
-    }
-        
 
+
+        $donnes = $this->_bdd->query('SELECT * FROM personnage');
+        while ($tabdonnes = $donnes->fetch()) {
+
+           ?> <OPTION value="<?php echo $tabdonnes['IDPersonnage']; ?>">
+            <?php echo $tabdonnes['Nom']; echo ' '.$tabdonnes['Prenom']; ?>
+        </OPTION> 
+        <?php
+ }
+        
+    }
 }                        
 ?>
