@@ -7,6 +7,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="menu.css">
+        <script>type="text/javascript" src="ex.js"</script>
         <div class="page">
             <nav class="menu">
                 <ul class="menu__list">
@@ -41,7 +42,26 @@
               }?>
         
         <input type="submit" value="Ajouter" />
+
+            <SELECT name="perso2">
+                <OPTION value="0"> Choix du personnage </OPTION>
+                
+                <?php
+                $her2 = new Heros();
+                $her2->AfficherPerso();
+                ?>
+            </SELECT>
+           
+            <?php
+              if(!empty($_POST['perso2'])){
+
+            $insertion = new INSERT($_POST['perso2']);
+            $insertion->create(); 
+              }?>
+        
+        <input type="submit" value="Ajouter" />
         </form>
+        <h1 id="h1" onclick="ModifDiv">Live</h1>
               
             <form method="post" action="battle2.php">
                 <p>Nom</p>

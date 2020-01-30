@@ -16,7 +16,7 @@
         <link rel="stylesheet" >
             <div id="pagea">
                 <div id="info">
-                    <form method="POST" action="combat.php">
+                    <form method="POST" action="combat2.php">
                         <table>
                             <tr>
                                 <td align="right"> <!-- je demande a l'utilisateur de renter le noméro de l'arene qu'il a choisi-->
